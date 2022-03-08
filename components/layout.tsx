@@ -4,9 +4,14 @@ import Link from "next/link";
 import utilStyles from "../styles/utils.module.css";
 import styles from "./layout.module.css";
 
+interface LayoutProps {
+  children: React.ReactNode;
+  home?: boolean;
+}
 const name = "Chisomo Lungu";
 export const siteTitle = "Next.js Sample Website";
-export default function Layout({ children, home }) {
+
+function Layout({ children, home }: LayoutProps) {
   return (
     <div className={styles.container}>
       <Head>
@@ -70,3 +75,5 @@ export default function Layout({ children, home }) {
     </div>
   );
 }
+
+export default Layout;
